@@ -1,5 +1,3 @@
-import csv
-
 class CSVParser:
 
     def __init__(self):
@@ -23,8 +21,12 @@ class CSVParser:
 
     def parse(self,filename):
         i=0
+        pacientes=list()
         with open(filename,"r") as csvfile:
-            pacientes= list(csv.reader(csvfile, delimiter=','))
+            for line in csvfile:
+                linha = list(line.split(","))
+                linha[len(linha)-1]=linha[len(linha)-1].strip("\n")
+                pacientes.append(linha)
             self.fill_Header(pacientes[0],len(pacientes[0]))
             for paciente in pacientes: #paciente é uma linha do ficheiro
                 if (i!=0):

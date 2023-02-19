@@ -1,6 +1,5 @@
 from CSVParser import CSVParser
 from tabulate import tabulate
-import pandas as pd             
 import matplotlib.pyplot as plt 
 
 def main():
@@ -31,12 +30,12 @@ def main():
         if(opcao=="4"):
             print()
             l=list()
-            lista = csvparser.calcula_Por_Sexo().items()
-            for category in lista: #("M",420)
-                l.extend(category[0]*int(category[1]))
-            df = pd.DataFrame({'Sexo':l})
-            categories = df['Sexo'].value_counts().index
-            counts = df['Sexo'].value_counts().values
+            dic = csvparser.calcula_Por_Sexo()
+            counts=list()
+            categories=list()
+            for k in dic:
+                categories.append(k)
+                counts.append(dic[k])
             plt.xlabel("Sexo")
             plt.ylabel("Nº de doentes")
             plt.bar(categories, counts, width=0.5)
@@ -45,13 +44,12 @@ def main():
         if(opcao=="5"):
             print()
             l=list()
-            lista = csvparser.calcula_Dist_Esc().items()
-            for category in lista: 
-                for j in range(0,int(category[1])):
-                    l.append(str(category[0]))
-            df = pd.DataFrame({'Escalao':l})
-            categories = df['Escalao'].value_counts().index
-            counts = df['Escalao'].value_counts().values
+            counts=list()
+            categories=list()
+            dic=csvparser.calcula_Dist_Esc()
+            for k in dic:
+                categories.append(k)
+                counts.append(dic[k])
             plt.xlabel("Escalão")
             plt.ylabel("Nº de doentes")
             plt.bar(categories, counts, width=0.5)
@@ -59,14 +57,12 @@ def main():
             continue
         if(opcao=="6"):
             print()
-            l=list()
-            lista = csvparser.calcula_Dist_Colestrol().items()
-            for category in lista: 
-                for j in range(0,int(category[1])):
-                    l.append(str(category[0]))
-            df = pd.DataFrame({'Nivel':l})
-            categories = df['Nivel'].value_counts().index
-            counts = df['Nivel'].value_counts().values
+            dic=csvparser.calcula_Dist_Colestrol()
+            counts=list()
+            categories=list()
+            for k in dic:
+                categories.append(k)
+                counts.append(dic[k])
             plt.xlabel("Nível de colestrol")
             plt.ylabel("Nº de doentes")
             plt.bar(categories, counts, width=0.5)
