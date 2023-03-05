@@ -136,6 +136,7 @@ def main():
                         "data":"{prim_groups.groupdict()['data']}",
                         "nome":"{prim_groups.groupdict()['nome']}",
                         "pai":"{prim_groups.groupdict()['pai']}",
+                        "mae":"{prim_groups.groupdict()['mae']}",
                         "familia":["""  
                     #print(prim_groups.groupdict(),end="")
                     registos+=1

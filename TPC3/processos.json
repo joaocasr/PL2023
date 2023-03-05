@@ -6,6 +6,7 @@
                         "data":"1894-11-08",
                         "nome":"Aarao Pereira Silva",
                         "pai":"Antonio Pereira Silva",
+                        "mae":"Francisca Campos Silva",
                         "familia":[]
                     },
                     {
@@ -13,6 +14,7 @@
                         "data":"1909-05-12",
                         "nome":"Abel Almeida",
                         "pai":"Antonio Manuel Almeida",
+                        "mae":"Teresa Maria Sousa",
                         "familia":[]
                     },
                     {
@@ -20,6 +22,7 @@
                         "data":"1867-05-23",
                         "nome":"Abel Alves Barroso",
                         "pai":"Antonio Alves Barroso",
+                        "mae":"Maria Jose Alvares Barroso",
                         "familia":[
                             {  
                             "nome":"Bento Alvares Barroso",
@@ -38,6 +41,7 @@
                         "data":"1896-11-28",
                         "nome":"Abel Augusto Oliveira",
                         "pai":"Francisco Jose Oliveira",
+                        "mae":"Antonia Rosa Rebelo",
                         "familia":[
                             {  
                             "nome":"Jose Antonio Oliveira",
@@ -51,6 +55,7 @@
                         "data":"1904-05-27",
                         "nome":"Abel Gomes Abreu Reis",
                         "pai":"Antonio Gomes Abreu",
+                        "mae":"Ana Sequeira Reis",
                         "familia":[]
                     },
                     {
@@ -58,6 +63,7 @@
                         "data":"1904-05-21",
                         "nome":"Abel Marques Reis",
                         "pai":"Jose Joaquim Marques Reis",
+                        "mae":"Bernardina Dantas",
                         "familia":[]
                     },
                     {
@@ -65,6 +71,7 @@
                         "data":"1901-11-12",
                         "nome":"Abel Martins Pereira",
                         "pai":"Serafim Martins Pereira",
+                        "mae":"Emilia Goncalves",
                         "familia":[]
                     },
                     {
@@ -72,6 +79,7 @@
                         "data":"1883-02-01",
                         "nome":"Abel Pedro Pereira Freitas",
                         "pai":"Joao Freitas Oliveira",
+                        "mae":"Cecilia Rosa Pereira",
                         "familia":[]
                     },
                     {
@@ -79,6 +87,7 @@
                         "data":"1900-08-30",
                         "nome":"Abel Silva Carvalho",
                         "pai":"Constantino Silva Rego",
+                        "mae":"Margarida Rosa Carvalho",
                         "familia":[]
                     },
                     {
@@ -86,6 +95,7 @@
                         "data":"1894-04-30",
                         "nome":"Abelardo Jose Cerqueira Araujo",
                         "pai":"Jose Maria Araujo",
+                        "mae":"Leopoldina Cerqueira Ribeiro Araujo",
                         "familia":[]
                     },
                     {
@@ -93,6 +103,7 @@
                         "data":"1894-04-30",
                         "nome":"Abelardo Jose Cerqueira Araujo",
                         "pai":"Jose Maria Araujo",
+                        "mae":"Leopoldina Cerqueira Ribeiro Araujo",
                         "familia":[]
                     },
                     {
@@ -100,6 +111,7 @@
                         "data":"1883-11-24",
                         "nome":"Abilio Acacio Conceicao Guerreiro",
                         "pai":"Jose Antonio Pereira Dantas Guerreiro",
+                        "mae":"Maria Rita Pereira Monteiro",
                         "familia":[]
                     },
                     {
@@ -107,6 +119,7 @@
                         "data":"1902-10-23",
                         "nome":"Abilio Aires Sousa Pereira Guimaraes",
                         "pai":"Joaquim Aires Sousa Pereira Guimaraes",
+                        "mae":"Josefa Rosa Gomes",
                         "familia":[]
                     },
                     {
@@ -114,6 +127,7 @@
                         "data":"1880-01-24",
                         "nome":"Abilio Antonio Alves",
                         "pai":"Joao Francisco Alves",
+                        "mae":"Maria Jesus Rocha",
                         "familia":[]
                     },
                     {
@@ -121,6 +135,7 @@
                         "data":"1889-12-03",
                         "nome":"Abilio Augusto Arantes",
                         "pai":"Sebastiao Arantes",
+                        "mae":"Maria Sousa",
                         "familia":[]
                     },
                     {
@@ -128,6 +143,7 @@
                         "data":"1908-08-11",
                         "nome":"Abilio Augusto Galvao",
                         "pai":"Antonio Augusto Galvao",
+                        "mae":"Perpetua Duarte Galvao",
                         "familia":[]
                     },
                     {
@@ -135,6 +151,7 @@
                         "data":"1908-05-20",
                         "nome":"Abilio Augusto Magalhaes",
                         "pai":"",
+                        "mae":"Maria Jesus Magalhaes",
                         "familia":[]
                     },
                     {
@@ -142,6 +159,7 @@
                         "data":"1908-05-20",
                         "nome":"Abilio Augusto Magalhaes",
                         "pai":"",
+                        "mae":"Maria Jesus Magalhaes",
                         "familia":[]
                     },
                     {
@@ -149,6 +167,7 @@
                         "data":"1908-05-20",
                         "nome":"Abilio Augusto Magalhaes",
                         "pai":"",
+                        "mae":"Maria Jesus Magalhaes",
                         "familia":[]
                     },
                     {
@@ -156,6 +175,7 @@
                         "data":"1869-12-02",
                         "nome":"Abilio Augusto Santos",
                         "pai":"Jose Joaquim Santos",
+                        "mae":"Teresa Jesus",
                         "familia":[
                             {  
                             "nome":"Antonio Jose Adao",
