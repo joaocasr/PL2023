@@ -1,0 +1,36 @@
+{
+                "registos":
+                            [
+    
+                    {
+            
+                        "Número":"3162",
+                        "Nome":"Cândido Faísca",
+                        "Notas1":[12,13,14],
+                        "Curso":"Teatro",
+                        "Notas2":[11,12],
+                        "Notas3":[13,16,17,11]  
+                    },
+        
+                    {
+            
+                        "Número":"7777",
+                        "Nome":"Cristiano Ronaldo",
+                        "Notas1":[17,12,11,10],
+                        "Curso":"Desporto",
+                        "Notas2":[16,12],
+                        "Notas3":[17,12,12]  
+                    },
+        
+                    {
+            
+                        "Número":"264",
+                        "Nome":"Marcelo Sousa",
+                        "Notas1":[18,15,11],
+                        "Curso":"Ciência Política",
+                        "Notas2":[12,14],
+                        "Notas3":[18,19,20]  
+                }
+        ]
+}
+        
