@@ -10,7 +10,7 @@ with open("alunos.csv","r") as csvfile:
     header = list(data)[0]
     data.pop(0)
 
-pattern = re.findall(r'(?P<campos>\w+)(,|{)?',header)
+pattern = re.findall(r'(?P<campos>\w+)(,|{|}::)?',header)
 print(pattern)
 
 colunas=list()
@@ -34,9 +34,16 @@ for (variavel,delim) in pattern:
     if((delim=="," or delim=="}::" or delim=="") and (isDigit(variavel)==True)):
             if(it==0 and delim!=""):
                 nums+="["+variavel
+                if(delim=="}::"):
+                    nums=""
+                    nums=variavel+"-E"
+                    weights.append(nums)
+                    nums=""
+                    it=-1
                 it+=1
             elif(it==1):
                 nums+=","+variavel+"]"
+                if(delim=="}::"): nums+="E"
                 weights.append(nums)
                 nums=""
                 it=0
@@ -44,25 +51,34 @@ for (variavel,delim) in pattern:
             
             
 print(weights)
-
+print(colunas)
 lines=1
-for line in data:
+agregation=False
+resultado=0
+for line in data:  
     c=0
     componentes=line.split(",")
-    #print(componentes)
+    print(componentes)
     i=0
-    geraJSON+="""
-                    {
+    geraJSON+="""           {
             """
     for oc in weights:
         atrib = colunas[i]
         if isDigit(oc) and int(oc)==1:
-            if(i<len(weights)-1):
+            if(i<len(weights)-1 and agregation==False):
                 geraJSON+=f"""
                         "{atrib}":"{componentes[c]}","""
-            else: 
+            elif(i==len(weights)-1 and agregation==False): 
                 geraJSON+=f"""
                         "{atrib}":"{componentes[c]}" """
+            elif(i<len(weights)-1 and agregation==True):
+                geraJSON+=f"""
+                        "{atrib}":"{resultado}","""
+                agregation=False
+            elif(i==len(weights)-1 and agregation==True): 
+                geraJSON+=f"""
+                        "{atrib}":"{resultado}" """
+                agregation=False
             c+=1
         if isDigit(oc) and int(oc)>1:
             geraJSON+=f"""
@@ -77,24 +93,60 @@ for line in data:
                     if(j<int(oc)-1): geraJSON+=f"""{componentes[c]},"""
                     if(j==int(oc)-1): geraJSON+=f"""{componentes[c]}]"""
                     c+=1
-        if(isDigit(oc)==False and isDigit(oc.split(",")[1].strip("]"))==True):
-            for l in range(c,c+int(oc.split(",")[1].strip("]"))):
-                if(isDigit(componentes[l])):
-                    auxList.append(int(componentes[l]))
-            geraJSON+=f"""
+        print(str(oc))
+        if(isDigit(oc)==False and "E" not in oc):
+            if(isDigit(oc.split(",")[1].strip("]"))==True):
+                print(str(c)+" "+str(c+int(oc.split(",")[1].strip("]"))))
+                for l in range(c,c+int(oc.split(",")[1].strip("]"))):
+                    if(isDigit(componentes[l])):
+                        print(componentes[l])
+                        auxList.append(int(componentes[l]))
+                geraJSON+=f"""
                         "{atrib}":["""
-            if(i<len(weights)-1):        
-                for j in range(0,len(auxList)):
-                    #print(c)
-                    if(j<len(auxList)-1): geraJSON+=f"""{auxList[j]},"""
-                    if(j==len(auxList)-1): geraJSON+=f"""{auxList[j]}],"""
-                
-            else:
-                for j in range(0,len(auxList)):
-                    #print(c)
-                    if(j<len(auxList)-1): geraJSON+=f"""{auxList[j]},"""
-                    if(j==len(auxList)-1): geraJSON+=f"""{auxList[j]}]"""
-            c+=int(oc.split(",")[1].strip("]"))
+                if(i<len(weights)-1):        
+                    for j in range(0,len(auxList)):
+                        #print(c)
+                        if(j<len(auxList)-1): geraJSON+=f"""{auxList[j]},"""
+                        if(j==len(auxList)-1): geraJSON+=f"""{auxList[j]}],"""
+                    
+                else:
+                    for j in range(0,len(auxList)):
+                        #print(c)
+                        if(j<len(auxList)-1): geraJSON+=f"""{auxList[j]},"""
+                        if(j==len(auxList)-1): geraJSON+=f"""{auxList[j]}]"""
+                c+=int(oc.split(",")[1].strip("]"))
+        if(isDigit(oc)==False and "]E" in oc):
+            if(isDigit(oc.split(",")[1].strip("]E"))==True):
+                for l in range(c,c+int(oc.split(",")[1].strip("]E"))):
+                    if(isDigit(componentes[l])):
+                        auxList.append(int(componentes[l]))
+                resultado=0
+                #i+=1
+                if(colunas[i+1]=="sum"):
+                    for num in auxList:
+                        resultado+=num
+                if(colunas[i+1]=="mean"):
+                    for num in auxList:
+                        resultado+=num
+                    resultado= resultado/len(auxList)
+                agregation=True
+                c+=int(oc.split(",")[1].strip("]E"))-1
+        if(isDigit(oc)==False and "-E" in oc):
+            if(isDigit(oc.strip("-E"))==True):
+                for l in range(c,c+int(oc.strip("-E"))):
+                    if(isDigit(componentes[l])):
+                        auxList.append(int(componentes[l]))
+                resultado=0
+                #i+=1
+                if(colunas[i+1]=="sum"):
+                    for num in auxList:
+                        resultado+=num
+                if(colunas[i+1]=="mean"):
+                    for num in auxList:
+                        resultado+=num
+                    resultado= resultado/len(auxList)
+                agregation=True
+                c+=int(oc.strip("-E"))-1
         auxList=list()
         i+=1
     if(lines<len(data)):

@@ -1,4 +1,4 @@
-Número,Nome,Notas1{3,5},,,,,,Curso,Notas2{2},Notas3{3,5},,,,,
-3162,Cândido Faísca,12,13,14,,,Teatro,11,12,13,16,17,11,
-7777,Cristiano Ronaldo,17,12,,11,10,Desporto,16,12,17,12,,,12
-264,Marcelo Sousa,18,15,,11,,Ciência Política,12,14,18,,19,20,
+Número,Nome,Notas1{3,5},,,,,,Curso,Notas2{2,4}::sum,Notas3{3,5},,,,,
+3162,Cândido Faísca,12,13,14,,,Teatro,11,12,11,,13,16,17,11,
+7777,Cristiano Ronaldo,17,12,,11,10,Desporto,16,12,12,13,17,12,,,12
+264,Marcelo Sousa,18,15,,11,,Ciência Política,12,14,13,,18,,19,20,
