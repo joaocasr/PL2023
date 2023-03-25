@@ -26,7 +26,7 @@ program myFact{
 tokens = [
     'COMENTARIOMULTILINHA',
     'COMENTARIO',
-    'FUNCTION',
+    'FUNCAO',
     'PROGRAM',
     'VARIAVEL'
     'FOR',
@@ -51,6 +51,13 @@ tokens = [
 
 t_ignore = ' \t\n'
 
+def t_COMENTARIOMULTILINHA(t):
+    r'\/\*(.*\n)*\*\/'
+    print(t)
+
+def t_COMENTARIO(t):
+    r'\/\/.*'
+    print(t)
 
 def t_WHILE(t):
     r'while\b'
@@ -85,7 +92,7 @@ def t_VARIAVEL(t):
     print(t)
 
 def t_OPERADORLOGICO(t):
-    r'>|<|==|!='
+    r'>|<|==|!=|<=|>='
     print(t)
 
 def t_INT(t):
@@ -132,14 +139,6 @@ def t_PASSO(t):
     r'\.\.'
     print(t)
 
-def t_COMENTARIOMULTILINHA(t):
-    r'\/\*(.*\n)*\*\/'
-    print(t)
-
-def t_COMENTARIO(t):
-    r'\/\/.*'
-    print(t)
-    
 def t_error(t):
     print(f"Carácter ilegal {t.value[0]}")
     t.lexer.skip(1)
