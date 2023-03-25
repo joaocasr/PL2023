@@ -32,7 +32,6 @@ tokens = [
     'FOR',
     'WHILE',
     'INT',
-    'ATRIBUICAO',
     'PONTOVIRGULA',
     'VIRGULA'
     'ABRIR_CHAVETA',
@@ -87,10 +86,6 @@ def t_VARIAVEL(t):
 
 def t_OPERADORLOGICO(t):
     r'>|<|==|!='
-    print(t)
-
-def t_ATRIBUICAO(t):
-    r'[a-zA-Z]\w+=\d+'
     print(t)
 
 def t_INT(t):
